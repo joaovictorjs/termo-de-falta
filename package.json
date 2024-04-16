@@ -1,0 +1,38 @@
+{
+  "name": "termo-de-falta",
+  "version": "0.0.1",
+  "description": "APP para gerar termo de falta",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaovictorjs/termo-de-falta.git"
+  },
+  "keywords": [
+    "winthor",
+    "totvs",
+    "oracle",
+    "report",
+    "nodejs",
+    "javascript",
+    "web"
+  ],
+  "author": "joaovictorjs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaovictorjs/termo-de-falta/issues"
+  },
+  "homepage": "https://github.com/joaovictorjs/termo-de-falta#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "oracledb": "^6.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
