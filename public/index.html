@@ -14,40 +14,30 @@
   </head>
   <body>
     <main>
-      <h1>TERMO DE FALTA</h1>
+      <h1>Termo de falta</h1>
       <section id="costumer-section">
-        <h2>CLIENTE</h2>
+        <label for="costumer-code">Cliente:</label>
         <div id="input-block">
-          <label for="costumer-field">Cliente:</label>
-          <div id="input-field">
-            <i class="ti ti-building-store"></i>
-            <input
-              type="text"
-              name="costumer-field"
-              id="costumer-field"
-              placeholder="Código do cliente"
-            />
-          </div>
+          <i class="ti ti-building-store"></i>
+          <input
+            type="text"
+            name="costumer-code"
+            id="costumer-code"
+            placeholder="Código do cliente"
+          />
         </div>
       </section>
 
       <section id="products-section">
-        <h2>PRODUTOS</h2>
-        <div id="input-block">
-          <label for="product-list-field">Produtos:</label>
-          <div id="input-field">
-            <i class="ti ti-list-details"></i>
-            <input
-              type="text"
-              name="product-list-field"
-              id="product-list-field"
-              placeholder="Cod. Produto, Qtd, Unidade, NF"
-            />
-          </div>
-        </div>
+        <label for="products-list">Lista de produtos</label>
+        <textarea
+          name="product-list"
+          id="products-list"
+          placeholder="Cod. prod, quantidade, unidade, nota fiscal;"
+        ></textarea>
       </section>
 
-      <button id="generate">Gerar termo</button>
+      <button>Gerar termo</button>
     </main>
   </body>
 </html>
