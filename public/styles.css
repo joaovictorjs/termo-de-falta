@@ -142,3 +142,27 @@ button:hover {
 button:active {
   opacity: 0.8;
 }
+
+button:disabled {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  cursor: default;
+  opacity: 100%;
+}
+
+#costumer-details-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+#costumer-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  column-gap: 5px;
+}

@@ -9,7 +9,7 @@
       href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
     <title>Termo de falta</title>
   </head>
   <body>
@@ -26,6 +26,32 @@
             placeholder="Código do cliente"
           />
         </div>
+        <div id="costumer-details-block">
+          <div id="costumer-detail">
+            <b>NOME:</b>
+            <p id="cliente"></p>
+          </div>
+          <div id="costumer-detail">
+            <b>CPF/CNPJ:</b>
+            <p id="cgcent"></p>
+          </div>
+          <div id="costumer-detail">
+            <b>ENDEREÇO:</b>
+            <p id="endercob"></p>
+          </div>
+          <div id="costumer-detail">
+            <b>NÚMERO:</b>
+            <p id="numerocob"></p>
+          </div>
+          <div id="costumer-detail">
+            <b>CIDADE:</b>
+            <p id="municcob"></p>
+          </div>
+          <div id="costumer-detail">
+            <b>BAIRRO:</b>
+            <p id="bairrocob"></p>
+          </div>
+        </div>
       </section>
 
       <section id="products-section">
@@ -37,7 +63,7 @@
         ></textarea>
       </section>
 
-      <button>Gerar termo</button>
+      <button id="gen-term-btn">Gerar termo</button>
     </main>
   </body>
 </html>
