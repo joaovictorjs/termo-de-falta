@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta lang="pt-BR" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <title>Termo de falta</title>
+  </head>
+  <body>
+    <main>
+      <h1>TERMO DE FALTA</h1>
+      <section id="costumer-section">
+        <h2>CLIENTE</h2>
+        <div id="input-block">
+          <label for="costumer-field">Cliente:</label>
+          <div id="input-field">
+            <i class="ti ti-building-store"></i>
+            <input
+              type="text"
+              name="costumer-field"
+              id="costumer-field"
+              placeholder="Código do cliente"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="products-section">
+        <h2>PRODUTOS</h2>
+        <div id="input-block">
+          <label for="product-list-field">Produtos:</label>
+          <div id="input-field">
+            <i class="ti ti-list-details"></i>
+            <input
+              type="text"
+              name="product-list-field"
+              id="product-list-field"
+              placeholder="Cod. Produto, Qtd, Unidade, NF"
+            />
+          </div>
+        </div>
+      </section>
+
+      <button id="generate">Gerar termo</button>
+    </main>
+  </body>
+</html>
