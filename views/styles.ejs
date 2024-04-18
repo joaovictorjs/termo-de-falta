@@ -1,0 +1,199 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+  .inter-regular {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+  }
+
+  .inter-bold {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+  }
+
+  * {
+    font-family: "Inter";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-color);
+  }
+
+  :root {
+    --background-color: #eeeeee;
+    --surface-color: #ffffff;
+    --hover-color: #eeeeee;
+    --border-color: #d9d9d9;
+    --primary-color: #0247fe;
+    --secondary-color: #ccdafe;
+    --disabled-light-color: #c6c6c6;
+    --disabled-strong-color: #969696;
+    --text-color: #121212;
+  }
+
+  html {
+    font-size: 8pt;
+    background-color: var(--background-color);
+  }
+
+  body {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    width: 25vw;
+    min-width: 400px;
+    height: 500px;
+    background-color: var(--surface-color);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    row-gap: 20px;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    row-gap: 10px;
+    width: 100%;
+  }
+
+  #costumer-section {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  #search-block {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 0px 10px 0px 10px;
+    column-gap: 10px;
+    border: 1px solid var(--border-color);
+  }
+
+  input,
+  input:focus {
+    background-color: transparent;
+    flex: 1;
+    outline: none;
+    border: none;
+  }
+
+  .progress-indicator {
+    display: none;
+    height: 16px;
+    width: 16px;
+    border: 2px solid var(--disabled-light-color);
+    border-top: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spinner 1s ease-in-out infinite;
+  }
+
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  #search-button {
+    padding: 4px;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    font-size: 1em;
+    color: var(--disabled-strong-color);
+    border-radius: 4px;
+  }
+
+  #search-costumer-field:focus ~ #search-button {
+    color: var(--primary-color);
+  }
+
+  #search-button:hover {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+  }
+
+  ol li {
+    list-style-type: none;
+  }
+
+  #products-section {
+    flex: 1;
+  }
+
+  input,
+  textarea {
+    font-size: 1.1em;
+  }
+
+  textarea,
+  textarea:focus {
+    flex: 1;
+    width: 100%;
+    background-color: var(--background-color);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    resize: none;
+    padding: 10px;
+  }
+
+  #generate-term-block {
+    width: 100%;
+    position: relative;
+  }
+
+  #generate-term-block .progress-indicator {
+    position: absolute;
+    left: calc(50% - 8px);
+    top: calc(50% - 8px);
+    transform: translateX(-50%) translateY(-50%);
+    display: none;
+  }
+
+  #generate-term-button {
+    background-color: var(--primary-color);
+    border: none;
+    height: 40px;
+    width: 100%;
+    font-weight: bold;
+    color: var(--background-color);
+    border-radius: 10px;
+    opacity: 0.9;
+  }
+
+  #generate-term-button:hover {
+    opacity: 1;
+  }
+
+  #generate-term-button:active {
+    opacity: 0.8;
+  }
+</style>
