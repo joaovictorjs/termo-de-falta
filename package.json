@@ -28,6 +28,7 @@
   "homepage": "https://github.com/joaovictorjs/termo-de-falta#readme",
   "dependencies": {
     "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
     "express": "^4.19.2",
     "morgan": "^1.10.0",
     "oracledb": "^6.4.0"

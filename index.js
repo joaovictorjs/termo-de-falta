@@ -8,6 +8,7 @@ dotenv.config();
 
 ora.initOracleClient();
 
+app.set("view-engine", "ejs");
 app.use(morgan("tiny"));
 app.use(express.static(__dirname + "/public"));
 
@@ -40,8 +41,8 @@ const withConnection = async (cb) => {
   }
 };
 
-app.use("/", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
+app.get("/", (req, res) => {
+  res.render("index.ejs");
 });
 
 app.use("/costumers/:code", async (req, res, next) => {
