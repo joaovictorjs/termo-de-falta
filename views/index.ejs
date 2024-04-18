@@ -1,9 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta lang="pt-BR" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
+    <title>Termo de falta</title>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <h1>Termo de falta</h1>
+
+      <section id="costumer-section">
+        <label for="search-costumer-field">Cliente:</label>
+        <div id="search-block">
+          <i class="ti ti-building-store"></i>
+          <input
+            type="text"
+            name="search-costumer-field"
+            id="search-costumer-field"
+            placeholder="Código do cliente"
+          />
+          <div class="progress-indicator"></div>
+          <button id="search-button">Pesquisar</button>
+        </div>
+        <ol id="costumer-details-block">
+          <li id="costumer-detail">
+            <b>NOME:</b>
+            <p id="cliente"></p>
+          </li>
+          <li id="costumer-detail">
+            <b>CPF/CNPJ:</b>
+            <p id="cgcent"></p>
+          </li>
+          <li id="costumer-detail">
+            <b>ENDEREÇO:</b>
+            <p id="endercob"></p>
+          </li>
+          <li id="costumer-detail">
+            <b>NUMERO:</b>
+            <p id="numerocob"></p>
+          </li>
+          <li id="costumer-detail">
+            <b>BAIRRO:</b>
+            <p id="bairrocob"></p>
+          </li>
+          <li id="costumer-detail">
+            <b>CIDADE:</b>
+            <p id="municcob"></p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="products-section">
+        <label for="products-list">Lista de produtos:</label>
+        <textarea
+          name="products-list"
+          id="products-list"
+          cols="30"
+          rows="10"
+        ></textarea>
+      </section>
+
+      <div id="generate-term-block">
+        <div class="progress-indicator" id="progress-indicator"></div>
+        <button id="generate-term-button">Gerar termo</button>
+      </div>
+    </main>
+  </body>
 </html>
