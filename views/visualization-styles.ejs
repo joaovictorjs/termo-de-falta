@@ -1,0 +1,121 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  :root {
+    --text-color: #212121;
+    --border-color: #a6a6a6;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto";
+    box-sizing: border-box;
+    color: var(--text-color);
+  }
+
+  html {
+    font-size: 9pt;
+  }
+
+  body {
+    padding: 20mm;
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    padding: 20mm;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    row-gap: 20px;
+  }
+
+  #company-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  #text {
+    padding-top: 20px;
+    font-size: 1.25em;
+  }
+
+  section {
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  td:nth-child(2) {
+    width: 60%;
+  }
+
+  thead td {
+    font-weight: bold;
+  }
+
+  td {
+    border: 1px solid var(--border-color);
+    padding-left: 10px;
+  }
+
+  #products-section {
+    flex: 1;
+  }
+
+  #sign-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    row-gap: 20px;
+  }
+
+  #sign-line {
+    width: 65%;
+    padding-top: 5px;
+    border-top: 1px solid var(--text-color);
+    text-align: center;
+  }
+
+  img {
+    opacity: 25%;
+    position: absolute;
+    width: 40%;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+</style>

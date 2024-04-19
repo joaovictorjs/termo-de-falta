@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta lang="pt-BR" />
+    <title>Visualização</title>
+  </head>
+  <body>
+    <%- include("visualization-styles.ejs")%>
+    <section id="company-information">
+      <p><%=company.name%></p>
+      <p>CNPJ: <%=company.taxId%> I.E: <%=company.stateTax%></p>
+      <p>
+        END: <%=company.address%>, n° <%=company.addressNumber%> -
+        <%=company.district%>
+      </p>
+      <p>
+        TEL: <%=company.phone%> - CEP: <%=company.postalCode%> -
+        <%=company.city%>
+      </p>
+    </section>
+
+    <h1>TERMO DE RESPONSABILIDADE DE FALTA</h1>
+
+    <p id="text">
+      Eu, <b><%=data.costumer.cliente%></b>, CPF/CNPJ:
+      <b><%=data.costumer.cgcent%></b>, Município:
+      <b><%=data.costumer.municcob%></b>, Endereço:
+      <b><%=data.costumer.endercob%></b>, n°
+      <b><%=data.costumer.numerocob%></b>, Bairro:
+      <b><%=data.costumer.bairrocob%></b>, declaro ter recebido da empresa
+      <b><%=company.name%></b>, CNPJ: <b><%=company.taxId%></b> os itens
+      descritos abaixo:
+    </p>
+
+    <section id="products-section">
+      <table>
+        <thead>
+          <tr>
+            <td>COD</td>
+            <td>PROD</td>
+            <td>QTD</td>
+            <td>EMB</td>
+            <td>NF</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let c = 0; c < data.products.length; c++) {%>
+          <tr>
+            <%Object.keys(data.products[c]).forEach((k, i) => {%>
+            <td><%=data.products[c][k]%></td>
+            <%})%>
+          </tr>
+          <%}%>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="sign-section">
+      <p><%=company.city%>, _____ de _______________ de ________.</p>
+      <p id="sign-line">Assinatura do motorista responsável pela entrega</p>
+      <p id="sign-line">Assinatura do cliente responsável pelo recebimento</p>
+    </section>
+
+    <img
+      src="<%=company.watermarkUrl%>"
+      alt="company watermark image"
+      srcset=""
+    />
+  </body>
+</html>
