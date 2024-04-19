@@ -48,15 +48,18 @@ app.get("/", (req, res) => {
 app.get("/visualization", (req, res) => {
   let data = req.query.data;
 
+  let msg = (field) => `[${field}]`;
+
   let company = {
-    name: process.env.COMPANY_NAME,
-    taxId: process.env.COMPANY_TAX_ID,
-    address: process.env.COMPANY_ADDRESS,
-    addressNumber: process.env.COMPANY_ADDRESS_NUMBER,
-    district: process.env.COMPANY_DISTRICT,
-    phone: process.env.COMPANY_PHONE,
-    postalCode: process.env.COMPANY_POSTAL_CODE,
-    stateTax: process.env.COMPANY_STATE_TAX,
+    name: process.env.COMPANY_NAME || msg("COMPANY_NAME"),
+    taxId: process.env.COMPANY_TAX_ID || msg("COMPANY_TAX_ID"),
+    address: process.env.COMPANY_ADDRESS || msg("COMPANY_ADDRESS"),
+    addressNumber:
+      process.env.COMPANY_ADDRESS_NUMBER || msg("COMPANY_ADDRESS_NUMBER"),
+    district: process.env.COMPANY_DISTRICT || msg("COMPANY_DISTRICT"),
+    phone: process.env.COMPANY_PHONE || msg("COMPANY_PHONE"),
+    postalCode: process.env.COMPANY_POSTAL_CODE || msg("COMPANY_POSTAL_CODE"),
+    stateTax: process.env.COMPANY_STATE_TAX || msg("COMPANY_STATE_TAX"),
   };
 
   res.render("visualization.ejs", { data: data, company: company });
