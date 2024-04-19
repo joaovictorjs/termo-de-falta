@@ -60,6 +60,7 @@ app.get("/visualization", (req, res) => {
     phone: process.env.COMPANY_PHONE || msg("COMPANY_PHONE"),
     postalCode: process.env.COMPANY_POSTAL_CODE || msg("COMPANY_POSTAL_CODE"),
     stateTax: process.env.COMPANY_STATE_TAX || msg("COMPANY_STATE_TAX"),
+    city: process.env.COMPANY_CITY || msg("COMPANY_CITY"),
   };
 
   res.render("visualization.ejs", { data: data, company: company });
