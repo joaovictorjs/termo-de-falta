@@ -45,6 +45,23 @@ app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
+app.get("/visualization", (req, res) => {
+  let data = req.query.data;
+
+  let company = {
+    name: process.env.COMPANY_NAME,
+    taxId: process.env.COMPANY_TAX_ID,
+    address: process.env.COMPANY_ADDRESS,
+    addressNumber: process.env.COMPANY_ADDRESS_NUMBER,
+    district: process.env.COMPANY_DISTRICT,
+    phone: process.env.COMPANY_PHONE,
+    postalCode: process.env.COMPANY_POSTAL_CODE,
+    stateTax: process.env.COMPANY_STATE_TAX,
+  };
+
+  res.render("visualization.ejs", { data: data, company: company });
+});
+
 app.use("/costumers/:code", async (req, res, next) => {
   try {
     await withConnection(async (conn) => {
