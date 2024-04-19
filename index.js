@@ -46,7 +46,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/visualization", (req, res) => {
-  let data = req.query.data;
+  let data = JSON.parse(req.query.data);
 
   let msg = (field) => `[${field}]`;
 
