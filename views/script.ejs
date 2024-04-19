@@ -1,1 +1,40 @@
-<script type="module"></script>
+<script type="module">
+  // fake data
+  const data = {
+    customer: {
+      cliente: "João Silva",
+      cgcent: "12345678901",
+      endercob: "Rua das Flores, 123",
+      numerocob: "123",
+      bairrocob: "Centro",
+      municcob: "Cidade A",
+    },
+    products: [
+      {
+        name: "Produto A",
+        quantity: 2,
+        packing: "Caixa",
+        invoiceNumber: "41419871",
+      },
+      {
+        name: "Produto B",
+        quantity: 1,
+        packing: "Unidade",
+        invoiceNumber: "98713246",
+      },
+      {
+        name: "Produto C",
+        quantity: 12,
+        packing: "Display",
+        invoiceNumber: "72364578",
+      },
+    ],
+  };
+
+  const generateTermButton = document.getElementById("generate-term-button");
+
+  generateTermButton.onclick = () => {
+    document.location.href =
+      "/visualization?data=" + encodeURIComponent(JSON.stringify(data));
+  };
+</script>
