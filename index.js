@@ -61,6 +61,8 @@ app.get("/visualization", (req, res) => {
     postalCode: process.env.COMPANY_POSTAL_CODE || msg("COMPANY_POSTAL_CODE"),
     stateTax: process.env.COMPANY_STATE_TAX || msg("COMPANY_STATE_TAX"),
     city: process.env.COMPANY_CITY || msg("COMPANY_CITY"),
+    watermarkUrl:
+      process.env.COMPANY_WATERMARK_URL || msg(COMPANY_WATERMARK_URL),
   };
 
   res.render("visualization.ejs", { data: data, company: company });
