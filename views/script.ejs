@@ -2,7 +2,7 @@
   const data = {};
 
   const searchField = document.getElementById("search-costumer-field");
-  const searchIndicator = document.getElementById("search-progress-indicator");
+  const searchIndicator = document.getElementById("search-indicator");
   const searchButton = document.getElementById("search-button");
   const costumerDetails = document.getElementById("costumer-details-block");
   const productsField = document.getElementById("products-list");
@@ -16,8 +16,108 @@
   const bairrocob = document.getElementById("bairrocob");
   const municcob = document.getElementById("municcob");
 
-  generateButton.onclick = () => {
-    document.location.href =
-      "/visualization?data=" + encodeURIComponent(JSON.stringify(data));
+  searchButton.onclick = async () => {
+    if (searchField.value === "") {
+      alert("Informe o código do cliente");
+      return;
+    }
+
+    try {
+      searchButton.style.display = "none";
+      searchIndicator.style.display = "block";
+
+      let response = await fetch(
+        `${document.URL}costumers/${searchField.value}`
+      );
+
+      if (response.status !== 200) {
+        throw await response.json();
+      }
+
+      data.costumer = await response.json();
+
+      cliente.textContent = data.costumer.cliente;
+      cgcent.textContent = data.costumer.cgcent;
+      endercob.textContent = data.costumer.endercob;
+      numerocob.textContent = data.costumer.numerocob;
+      bairrocob.textContent = data.costumer.bairrocob;
+      municcob.textContent = data.costumer.municcob;
+
+      costumerDetails.style.display = "block";
+    } catch (e) {
+      alert(e.message);
+      costumerDetails.style.display = "none";
+      data.costumer = undefined;
+    } finally {
+      searchButton.style.display = "block";
+      searchIndicator.style.display = "none";
+    }
+  };
+
+  const parseProductsFromInput = () => {};
+
+  generateButton.onclick = async () => {
+    generateButton.disabled = true;
+
+    data.products = [];
+
+    if (data.costumer === undefined) {
+      alert("Nenhum cliente foi especificado");
+      generateButton.disabled = false;
+      return;
+    }
+
+    if (productsField.value === "") {
+      alert("Especifique os produtos no campo lista de produtos");
+      generateButton.disabled = false;
+      return;
+    }
+
+    let products = [];
+    let rows = productsField.value.split("\n");
+
+    for (let c = 0; c < rows.length; c++) {
+      let cols = rows[c].split(",").filter((v) => v.trim() !== "");
+
+      if (cols.length !== 0 && cols.length !== 4) {
+        alert(
+          `Erro de formatação na linha ${
+            c + 1
+          }.\nModelo: Cod. Prod, qtd, embalagem, num NF`
+        );
+        generateButton.disabled = false;
+        return;
+      }
+
+      products.push({
+        code: cols[0].trim(),
+        quantity: cols[1].trim(),
+        packing: cols[2].trim(),
+        invoiceNumber: cols[3].trim(),
+      });
+    }
+
+    for (let c = 0; c < products.length; c++) {
+      try {
+        let response = await fetch(
+          `${document.URL}products/${products[c].code}`
+        );
+
+        if (response.status !== 200) {
+          throw await response.json();
+        }
+
+        products[c].name = await response.json().descricao;
+      } catch (e) {
+        alert(e.message);
+        return;
+      } finally {
+        generateButton.disabled = false;
+      }
+    }
+
+    data.products = products;
+
+    "/visualization?data=" + encodeURIComponent(JSON.stringify(data));
   };
 </script>
