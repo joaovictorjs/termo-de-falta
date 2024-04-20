@@ -45,6 +45,10 @@ app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
+app.get("/favicon.ico", (req, res) => {
+  res.status(204).end();
+});
+
 app.get("/visualization", (req, res) => {
   let data = JSON.parse(req.query.data);
 

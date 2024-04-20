@@ -1,9 +1,22 @@
 <script type="module">
   const data = {};
 
-  const generateTermButton = document.getElementById("generate-term-button");
+  const searchField = document.getElementById("search-costumer-field");
+  const searchIndicator = document.getElementById("search-progress-indicator");
+  const searchButton = document.getElementById("search-button");
+  const costumerDetails = document.getElementById("costumer-details-block");
+  const productsField = document.getElementById("products-list");
+  const generateIndicator = document.getElementById("generate-indicator");
+  const generateButton = document.getElementById("generate-term-button");
 
-  generateTermButton.onclick = () => {
+  const cliente = document.getElementById("cliente");
+  const cgcent = document.getElementById("cgcent");
+  const endercob = document.getElementById("endercob");
+  const numerocob = document.getElementById("numerocob");
+  const bairrocob = document.getElementById("bairrocob");
+  const municcob = document.getElementById("municcob");
+
+  generateButton.onclick = () => {
     document.location.href =
       "/visualization?data=" + encodeURIComponent(JSON.stringify(data));
   };
