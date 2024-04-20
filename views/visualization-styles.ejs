@@ -92,6 +92,9 @@
 
   #products-section {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   #sign-section {
@@ -99,12 +102,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    row-gap: 20px;
+    row-gap: 40px;
   }
 
   #sign-line {
     width: 65%;
-    padding-top: 5px;
     border-top: 1px solid var(--text-color);
     text-align: center;
   }
@@ -112,7 +114,7 @@
   img {
     opacity: 25%;
     position: absolute;
-    width: 40%;
+    width: 70%;
     z-index: -1;
     top: 50%;
     left: 50%;
