@@ -107,7 +107,7 @@
           throw await response.json();
         }
 
-        products[c].name = await response.json().descricao;
+        products[c].name = (await response.json()).descricao;
       } catch (e) {
         alert(e.message);
         return;
@@ -118,6 +118,9 @@
 
     data.products = products;
 
-    "/visualization?data=" + encodeURIComponent(JSON.stringify(data));
+    console.log(data);
+
+    document.location.href =
+      "/visualization?data=" + encodeURIComponent(JSON.stringify(data));
   };
 </script>
