@@ -205,4 +205,14 @@
   #generate-term-button:active {
     opacity: 0.8;
   }
+
+  #generate-term-button:disabled {
+    background-color: var(--hover-color);
+    border: 1px solid var(--border-color);
+    cursor: default;
+  }
+
+  #generate-term-button:disabled ~ #generate-indicator {
+    display: block;
+  }
 </style>
