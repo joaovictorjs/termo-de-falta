@@ -6,7 +6,15 @@ const morgan = require("morgan");
 
 dotenv.config();
 
-ora.initOracleClient();
+let oraOpts = {};
+
+if (process.platform === "win32") {
+  oraOpts = {
+    libDir: process.env.NODE_ORACLEDB_LIBDIR,
+  };
+}
+
+ora.initOracleClient(oraOpts);
 
 app.set("view-engine", "ejs");
 app.use(morgan("tiny"));
